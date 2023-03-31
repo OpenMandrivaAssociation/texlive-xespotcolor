@@ -1,6 +1,6 @@
 Name:		texlive-xespotcolor
 Version:	58212
-Release:	1
+Release:	2
 Summary:	Spot colours support for XeLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/xespotcolor
