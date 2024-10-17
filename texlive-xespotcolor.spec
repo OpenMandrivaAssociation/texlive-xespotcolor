@@ -3,7 +3,7 @@ Version:	58212
 Release:	2
 Summary:	Spot colours support for XeLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/xespotcolor
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/xespotcolor
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xespotcolor.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xespotcolor.doc.r%{version}.tar.xz
