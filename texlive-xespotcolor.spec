@@ -1,41 +1,24 @@
-Name:		texlive-xespotcolor
-Version:	58212
-Release:	2
+%global tl_name xespotcolor
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.1
+Release:	%{tl_revision}.1
 Summary:	Spot colours support for XeLaTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/xespotcolor
+URL:		https://www.ctan.org/tex-archive/macros/xetex/latex/xespotcolor
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xespotcolor.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xespotcolor.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xespotcolor.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/xespotcolor.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/xespotcolor.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/xespotcolor.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides macros for using spot colours in LaTeX
-documents. The package is a reimplementation of the spotcolor
-package for use with XeLaTeX. As such, it has the same user
-interface and the same capabilities.
+The package provides macros for using spot colours in LaTeX documents.
+The package is a reimplementation of the spotcolor package for use with
+XeLaTeX. As such, it has the same user interface and the same
+capabilities.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/xelatex/xespotcolor
-%{_texmfdistdir}/tex/xelatex/xespotcolor
-%doc %{_texmfdistdir}/doc/xelatex/xespotcolor
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
